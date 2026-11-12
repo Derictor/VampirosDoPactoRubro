@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SUBRACES>
+  <SUBRACE-DL_DERICTOR>
+    <DescriptionInfo Name="DES_DL_CLASS" Description="DES_DL_CLASS_DES" IconName="ClassWitch" />
+    <Race Value="RACE-UNLIVING" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-HUMANOID" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-UNLIVING" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-MAGIC_USER" />
+    <MainSubraceAttributes Amount="5" Tag="TAG-WITS" />
+    <MainSubraceAttributes Amount="7" Tag="TAG-STRENGTH" />
+    <MainSubraceAttributes Amount="4" Tag="TAG-PERCEPTION" />
+    <MainSubraceAttributes Amount="6" Tag="TAG-INTELLIGENCE" />
+    <MainSubraceAttributes Amount="5" Tag="TAG-WISDOM" />
+    <MainSubraceAttributes Amount="7" Tag="TAG-MYSTICISM" />
+    <MainSubraceAttributes Amount="10" Tag="TAG-DESTINY" />
+    <SecondSubraceAttributes Amount="19" Tag="TAG-MAX_HEALTH_PHYSICAL" />
+    <SecondSubraceAttributes Amount="12" Tag="TAG-MAX_HEALTH_MENTAL" />
+    <SecondSubraceAttributes Amount="20" Tag="TAG-MAX_HEALTH_SPIRIT" />
+    <SecondSubraceAttributes Amount="4" Tag="TAG-MOVEMENT_RANGE" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-RANGE_OF_SIGHT_DAY" />
+    <SecondSubraceAttributes Amount="2" Tag="TAG-RANGE_OF_SIGHT_NIGHT" />
+    <SecondSubraceAttributes Amount="10" Tag="TAG-MORALE" />
+    <SecondSubraceAttributes Amount="150" Tag="TAG-PERSONAL_CARRY_LIMIT" />
+    <CommonSubraceAttributes Chance="100">
+      <CountedTag Amount="1" Tag="TAG-GENDER_MALE" />
+    </CommonSubraceAttributes>
+    <NaturalSkills Value="SKILL_PACK-DL_VAMPIRE" />
+    <AdvancementSkills Value="SKILL_PACK-RANDOM_ADVANCEMENT" />
+    <GraphicMale Value="DL_DerictorPortrait" />
+    <DefaultCargo Chance="100" ItemCargo="ITEM_CARGO-TUT_YANEK_SWORD_1H" />
+  </SUBRACE-DL_DERICTOR>
+  <SUBRACE-DL_FAMILIAR>
+    <DescriptionInfo Name="DES_DL_BAT" Description="DES_DL_BAT_DES" IconName="ClassBeast" />
+    <Race Value="RACE-BEAST" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-BAT" />
+    <MainSubraceAttributes Amount="4" Tag="TAG-WITS" />
+    <MainSubraceAttributes Amount="2" Tag="TAG-STRENGTH" />
+    <MainSubraceAttributes Amount="0" Tag="TAG-PERCEPTION" />
+    <MainSubraceAttributes Amount="1" Tag="TAG-INTELLIGENCE" />
+    <MainSubraceAttributes Amount="0" Tag="TAG-WISDOM" />
+    <MainSubraceAttributes Amount="1" Tag="TAG-MYSTICISM" />
+    <MainSubraceAttributes Amount="0" Tag="TAG-DESTINY" />
+    <SecondSubraceAttributes Amount="2" Tag="TAG-MAX_HEALTH_PHYSICAL" />
+    <SecondSubraceAttributes Amount="2" Tag="TAG-MAX_HEALTH_MENTAL" />
+    <SecondSubraceAttributes Amount="2" Tag="TAG-MAX_HEALTH_SPIRIT" />
+    <CommonSubraceAttributes Chance="100">
+      <CountedTag Amount="1" Tag="TAG-GENDER_OTHER" />
+    </CommonSubraceAttributes>
+    <NaturalSkills Value="SKILL_PACK-NATURAL_ANIMAL_BITE_FLYING" />
+    <GraphicMale Value="Bat" />
+    <GraphicFemale Value="Bat" />
+  </SUBRACE-DL_FAMILIAR>
+  <SUBRACE-DL_LOBO_NOTURNO>
+    <DescriptionInfo Name="DES_DL_WOLF" Description="DES_DL_WOLF_DES" IconName="ClassBeast" />
+    <Race Value="RACE-BEAST" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-WOLF" />
+    <MainSubraceAttributes Amount="4" Tag="TAG-WITS" />
+    <MainSubraceAttributes Amount="9" Tag="TAG-STRENGTH" />
+    <MainSubraceAttributes Amount="7" Tag="TAG-PERCEPTION" />
+    <MainSubraceAttributes Amount="3" Tag="TAG-INTELLIGENCE" />
+    <MainSubraceAttributes Amount="2" Tag="TAG-WISDOM" />
+    <SecondSubraceAttributes Amount="25" Tag="TAG-MAX_HEALTH_PHYSICAL" />
+    <SecondSubraceAttributes Amount="12" Tag="TAG-MAX_HEALTH_MENTAL" />
+    <SecondSubraceAttributes Amount="6" Tag="TAG-MAX_HEALTH_SPIRIT" />
+    <SecondSubraceAttributes Amount="5" Tag="TAG-MOVEMENT_RANGE" />
+    <SecondSubraceAttributes Amount="2" Tag="TAG-RANGE_OF_SIGHT_DAY" />
+    <SecondSubraceAttributes Amount="2" Tag="TAG-RANGE_OF_SIGHT_NIGHT" />
+    <SecondSubraceAttributes Amount="10" Tag="TAG-MORALE" />
+    <SecondSubraceAttributes Amount="170" Tag="TAG-PERSONAL_CARRY_LIMIT" />
+    <CommonSubraceAttributes Chance="100">
+      <CountedTag Amount="1" Tag="TAG-GENDER_OTHER" />
+    </CommonSubraceAttributes>
+    <CommonSubraceAttributes Chance="3">
+      <CountedTag Amount="1" Tag="TAG-CREEPY" />
+    </CommonSubraceAttributes>
+    <CommonSubraceAttributes Chance="3">
+      <CountedTag Amount="1" Tag="TAG-ATTRACTIVE" />
+    </CommonSubraceAttributes>
+    <CommonSubraceAttributes Chance="3">
+      <CountedTag Amount="1" Tag="TAG-BEAUTIFUL" />
+    </CommonSubraceAttributes>
+    <CommonSubraceAttributes Chance="40">
+      <CountedTag Amount="3" Tag="TAG-MAX_HEALTH_PHYSICAL" />
+    </CommonSubraceAttributes>
+    <CommonSubraceAttributes Chance="40">
+      <CountedTag Amount="3" Tag="TAG-MAX_HEALTH_MENTAL" />
+    </CommonSubraceAttributes>
+    <CommonSubraceAttributes Chance="40">
+      <CountedTag Amount="1" Tag="TAG-MAX_HEALTH_SPIRIT" />
+    </CommonSubraceAttributes>
+    <CommonSubraceAttributes Chance="50">
+      <CountedTag Amount="1" Tag="TAG-WITS" />
+    </CommonSubraceAttributes>
+    <CommonSubraceAttributes Chance="50">
+      <CountedTag Amount="1" Tag="TAG-STRENGTH" />
+    </CommonSubraceAttributes>
+    <CommonSubraceAttributes Chance="50">
+      <CountedTag Amount="1" Tag="TAG-PERCEPTION" />
+    </CommonSubraceAttributes>
+    <BlockedItemSlot Value="TAG-BLOCKED_COMPANION" />
+    <BlockedItemSlot Value="TAG-BLOCKED_LEFT_HAND" />
+    <BlockedItemSlot Value="TAG-BLOCKED_RIGHT_HAND" />
+    <NaturalSkills Value="SKILL_PACK-NATURAL_ANIMAL_BITE" />
+    <ClassSkills Value="SKILL_PACK-CLASS_WOLF" />
+    <AdvancementSkills Value="SKILL_PACK-ADV_BIG_ANIMAL" />
+    <GraphicMale Value="Wolf1" />
+    <GraphicFemale Value="Wolf1" />
+    <BodyCargo Chance="100" ItemCargo="ITEM_CARGO-FEW_MEAT" />
+    <BodyCargo Chance="50" ItemCargo="ITEM_CARGO-FEW_BLOOD_BONE" />
+    <BodyCargo Chance="50" ItemCargo="ITEM_CARGO-FEW_FUR_LEATHER" />
+  </SUBRACE-DL_LOBO_NOTURNO>
+  <SUBRACE-DL_VAMPIRE_NOVICE>
+    <DescriptionInfo Name="DES_DL_NOVICE" Description="DES_DL_NOVICE_DES" IconName="ClassWitch" />
+    <Race Value="RACE-UNLIVING" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-HUMANOID" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-UNLIVING" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-MAGIC_USER" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-DL_LOYAL" />
+    <MainSubraceAttributes Amount="5" Tag="TAG-WITS" />
+    <MainSubraceAttributes Amount="7" Tag="TAG-STRENGTH" />
+    <MainSubraceAttributes Amount="4" Tag="TAG-PERCEPTION" />
+    <MainSubraceAttributes Amount="6" Tag="TAG-INTELLIGENCE" />
+    <MainSubraceAttributes Amount="5" Tag="TAG-WISDOM" />
+    <MainSubraceAttributes Amount="7" Tag="TAG-MYSTICISM" />
+    <MainSubraceAttributes Amount="8" Tag="TAG-DESTINY" />
+    <SecondSubraceAttributes Amount="19" Tag="TAG-MAX_HEALTH_PHYSICAL" />
+    <SecondSubraceAttributes Amount="12" Tag="TAG-MAX_HEALTH_MENTAL" />
+    <SecondSubraceAttributes Amount="20" Tag="TAG-MAX_HEALTH_SPIRIT" />
+    <SecondSubraceAttributes Amount="4" Tag="TAG-MOVEMENT_RANGE" />
+    <SecondSubraceAttributes Amount="1" Tag="TAG-RANGE_OF_SIGHT_DAY" />
+    <SecondSubraceAttributes Amount="2" Tag="TAG-RANGE_OF_SIGHT_NIGHT" />
+    <SecondSubraceAttributes Amount="10" Tag="TAG-MORALE" />
+    <SecondSubraceAttributes Amount="150" Tag="TAG-PERSONAL_CARRY_LIMIT" />
+    <NaturalSkills Value="SKILL_PACK-DL_NOVICE" />
+    <AdvancementSkills Value="SKILL_PACK-RANDOM_ADVANCEMENT" />
+    <GraphicMale Value="StrigaMaster" />
+    <GraphicFemale Value="StrigaMistress" />
+  </SUBRACE-DL_VAMPIRE_NOVICE>
+</SUBRACES>

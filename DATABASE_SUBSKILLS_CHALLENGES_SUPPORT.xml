@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SUBSKILLS_CHALLENGES>
+  <SUBSKILL-DL_CALL Delay="0.0" Animation="Spell2" Sound="SubskillSummonWildBeast">
+    <DescriptionInfo Name="DES_DL_CALL" Description="DES_DL_CALL_DES" IconName="SubskillSummonWildBeast" />
+    <ShortInfo TriggerIcon="TAG-TRIGGER_DO_CAST_INSTANT" DamageIcon="TAG-DAMAGE_SUMMON_ONCE" TargetIcon="TAG-TARGET_EMPTY_ALLY_MELEE_SLOT" AttackInfo="{SCRIPT:SI_SummonX1}" />
+    <Trigger Priority="20" RequiredToBeInFrontline="TRUE" RequiredToBeInBackline="FALSE">
+      <TriggerGroup Value="DoCastInstant" />
+      <TriggerScript ScriptName="" />
+    </Trigger>
+    <Targets>
+      <TargetScript ScriptName="Trg_OwnFreeMeleePositionsSummonNotOnBF" />
+      <TargetCountRange MinimumCount="1" MaximumCount="1" TargetIndication="Chosen" />
+    </Targets>
+    <Activation ScriptName="Act_Summon" />
+    <ChallengeType Value="TypePhysical" />
+    <SubskillAttributesOnLevel Level="0" PowerLevel="0.0">
+      <SubskillAttribute Identifier="Summon" AttributeStringValue="SUBRACE-DL_FAMILIAR" />
+      <SubskillAttribute Identifier="SummonLevel" AttributeFloatValue="0" />
+      <SubskillAttribute Identifier="SummonEquipment" AttributeFloatValue="0" />
+      <SubskillAttribute Identifier="TypePhysical" AttributeFloatValue="1.5" />
+      <MainAtt Amount="1.0" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="1" PowerLevel="0.0">
+      <SubskillAttribute Identifier="Summon" AttributeStringValue="SUBRACE-DL_FAMILIAR" />
+      <SubskillAttribute Identifier="SummonLevel" AttributeFloatValue="1" />
+      <SubskillAttribute Identifier="SummonEquipment" AttributeFloatValue="0" />
+      <SubskillAttribute Identifier="TypePhysical" AttributeFloatValue="1.5" />
+      <MainAtt Amount="1.1" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="2" PowerLevel="4.0">
+      <SubskillAttribute Identifier="Summon" AttributeStringValue="SUBRACE-DL_FAMILIAR" />
+      <SubskillAttribute Identifier="SummonLevel" AttributeFloatValue="1" />
+      <SubskillAttribute Identifier="SummonEquipment" AttributeFloatValue="0" />
+      <SubskillAttribute Identifier="TypePhysical" AttributeFloatValue="1.5" />
+      <MainAtt Amount="1.2" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="3" PowerLevel="14.0">
+      <SubskillAttribute Identifier="Summon" AttributeStringValue="SUBRACE-DL_FAMILIAR" />
+      <SubskillAttribute Identifier="SummonLevel" AttributeFloatValue="1" />
+      <SubskillAttribute Identifier="SummonEquipment" AttributeFloatValue="0" />
+      <SubskillAttribute Identifier="TypePhysical" AttributeFloatValue="1.5" />
+      <MainAtt Amount="1.3" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="4" PowerLevel="29.0">
+      <SubskillAttribute Identifier="Summon" AttributeStringValue="SUBRACE-DL_FAMILIAR" />
+      <SubskillAttribute Identifier="SummonLevel" AttributeFloatValue="1" />
+      <SubskillAttribute Identifier="SummonEquipment" AttributeFloatValue="0" />
+      <SubskillAttribute Identifier="TypePhysical" AttributeFloatValue="1.5" />
+      <MainAtt Amount="1.0" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="5" PowerLevel="59.0">
+      <SubskillAttribute Identifier="Summon" AttributeStringValue="SUBRACE-DL_FAMILIAR" />
+      <SubskillAttribute Identifier="SummonLevel" AttributeFloatValue="1" />
+      <SubskillAttribute Identifier="SummonEquipment" AttributeFloatValue="0" />
+      <SubskillAttribute Identifier="TypePhysical" AttributeFloatValue="1.5" />
+      <MainAtt Amount="1.0" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+  </SUBSKILL-DL_CALL>
+</SUBSKILLS_CHALLENGES>

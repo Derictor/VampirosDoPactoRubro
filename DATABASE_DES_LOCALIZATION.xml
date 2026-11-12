@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<DATABASE_DES_LOCALIZATION-NO_HSH>
+  <LOC_LIBRARY-DL_PT Language="English">
+    <Entry Key="DES_DL_CLASS" Val="Vampiro da Forja Rubra" />
+    <Entry Key="DES_DL_CLASS_DES" Val="Derictor Lutoar foi mago, guerreiro e ferreiro em vida. Buscou a eternidade para aprender e dar forma ao que aprendia. Agora o nobre morto-vivo se alimenta de magia e grava encantamentos no metal com o próprio sangue." />
+    <Entry Key="DES_DL_SIPHON" Val="Sifão Arcano" />
+    <Entry Key="DES_DL_SIPHON_DES" Val="Em desafios espirituais, drena um inimigo. O poder depende de Destino e parte do dano cura Derictor durante o desafio." />
+    <Entry Key="DES_DL_FORGE" Val="Ferreiro Sanguíneo" />
+    <Entry Key="DES_DL_FORGE_DES" Val="Aumenta a contribuição para fabricação e rituais. Na oficina itinerante, Derictor usa materiais do grupo e o próprio sangue para fabricar equipamentos." />
+    <Entry Key="DES_DL_CALL" Val="Chamado do Familiar" />
+    <Entry Key="DES_DL_CALL_DES" Val="Invoca um morcego na linha de frente durante um desafio físico. A invocação termina com o desafio." />
+    <Entry Key="DES_DL_BAT" Val="Morcego Familiar" />
+    <Entry Key="DES_DL_BAT_DES" Val="Um morcego vivo ligado a Derictor por um rito." />
+    <Entry Key="DES_DL_WOLF" Val="Lobo Noturno" />
+    <Entry Key="DES_DL_WOLF_DES" Val="Um lobo selvagem que aceitou viajar sob a proteção de Derictor." />
+    <Entry Key="DES_DL_NOVICE" Val="Vampiro do Pacto Rubro" />
+    <Entry Key="DES_DL_NOVICE_DES" Val="Em vida, pediu a Derictor o dom da eternidade. Conserva seu lugar no grupo e conhece o Sifão Arcano." />
+    <Entry Key="DES_DL_SUNLIGHT" Val="Fraqueza à Luz do Dia" />
+    <Entry Key="DES_DL_SUNLIGHT_DES" Val="Durante o dia, reduz em 10% os atributos principais do vampiro." />
+    <Entry Key="DES_DL_NIGHT_SPAWN" Val="Cria da Noite" />
+    <Entry Key="DES_DL_NIGHT_SPAWN_DES" Val="Comece com Derictor Lutoar, vampiro da Forja Rubra. Recrute-o em A Forja Depois do Anoitecer para desbloquear este traço no seu perfil." />
+    <Entry Key="DES_DL_COOP_RECRUIT" Val="{SCRIPT:UIS_DL_RecruitAndUnlock}" />
+    <Entry Key="DES_DL_COOP_OFFICE" Val="{SCRIPT:UIS_DL_OfficeAndUnlock}" />
+  </LOC_LIBRARY-DL_PT>
+</DATABASE_DES_LOCALIZATION-NO_HSH>

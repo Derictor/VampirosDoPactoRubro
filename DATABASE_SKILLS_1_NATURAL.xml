@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SKILLS_1_NATURAL name="1_Natural">
+  <SKILL-DL_SIPHON Rarity="0">
+    <DescriptionInfo Name="DES_DL_SIPHON" Description="DES_DL_SIPHON_DES" IconName="SubskillWillDrain" />
+    <BaseEssence Amount="5" Tag="TAG-ESSENCE_GRAY" />
+    <SkillSubskill Value="SUBSKILL-DL_SIPHON" />
+  </SKILL-DL_SIPHON>
+  <SKILL-DL_FORGE Rarity="0">
+    <DescriptionInfo Name="DES_DL_FORGE" Description="DES_DL_FORGE_DES" IconName="SubskillAddAttribute" />
+    <BaseEssence Amount="5" Tag="TAG-ESSENCE_GRAY" />
+    <SkillSubskill Value="SUBSKILL-ADD_RITUALS" />
+    <SkillSubskill Value="SUBSKILL-ADD_CRAFTING" />
+  </SKILL-DL_FORGE>
+  <SKILL-DL_CALL Rarity="0">
+    <DescriptionInfo Name="DES_DL_CALL" Description="DES_DL_CALL_DES" IconName="SubskillSummonWildBeast" />
+    <BaseEssence Amount="5" Tag="TAG-ESSENCE_GRAY" />
+    <SkillSubskill Value="SUBSKILL-DL_CALL" />
+  </SKILL-DL_CALL>
+  <SKILL-DL_SUNLIGHT Rarity="0">
+    <DescriptionInfo Name="DES_DL_SUNLIGHT" Description="DES_DL_SUNLIGHT_DES" IconName="SubskillSubAttribute" />
+    <BaseEssence Amount="5" Tag="TAG-ESSENCE_GRAY" />
+    <SkillSubskill Value="SUBSKILL-CONST_DAY_WEAKNESS" />
+  </SKILL-DL_SUNLIGHT>
+</SKILLS_1_NATURAL>

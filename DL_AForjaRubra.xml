@@ -1,0 +1,607 @@
+<?xml version='1.0' encoding='utf-8'?>
+<MODULE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="DL_AForjaRubra" lastEventIndex="6" allowToUse="true" uniqueModuleID="1726283471">
+  <Adventure name="A Forja Depois do Anoitecer" uniqueID="1" allowOnce="true" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="40" positionY="-30" width="350" height="660" image="DL_Event1">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="5" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicFilter name="existing_derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerAllGroupsCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicResultAction list="existing_derictor">
+            <scriptCallWithTag scriptName="FRA_ListSizeLessEqualThan" parameter="0" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="365" fromY="-580" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="-30" width="350" height="660" image="DL_Event1">
+      <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Ajudar na forja e convidar Derictor a viajar." />
+      <outputs ownerID="2" targetID="4" fromX="825" fromY="-660" name="Agradecer a conversa e seguir viagem." />Uma oficina ainda está acesa. O ferreiro, pálido à luz das brasas, puxa para si a magia que escapa de uma lâmina e termina de gravar a têmpera com uma gota do próprio sangue.
+
+— Derictor Lutoar. Busquei a eternidade porque tinha mais coisas para aprender do que anos para viver. Se ainda houver boas oficinas pelo seu caminho, me interessa saber aonde vão.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="960" positionY="-30" width="350" height="660" image="DL_Event1">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddCharacter" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-FEW_IRON" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ONE_AMBER" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ONE_LEATHER" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" fromX="1285" fromY="-580" name="DES_DL_COOP_RECRUIT" />Derictor apaga as brasas, guarda as ferramentas e segue com vocês.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1420" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="A Oficina Itinerante" uniqueID="2" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="10" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="40" positionY="-30" width="350" height="660" image="DL_Event2">
+      <logic>
+        <FilterBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicProcessing name="healthy" list1="derictor">
+            <scriptCallWithTag scriptName="FLP_FilterByTag" parameter="12" tag="TAG-HEALTH_PHYSICAL" />
+          </LogicProcessing>
+          <LogicResultAction list="healthy">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="7" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="16" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="365" fromY="-580" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="-30" width="350" height="660" image="DL_Event2">
+      <logic>
+        <FilterBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicProcessing name="adept" list1="derictor">
+            <scriptCallWithTag scriptName="FLP_FilterByTag" parameter="13" tag="TAG-DESTINY" />
+          </LogicProcessing>
+          <LogicFilter name="AMBER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-AMBER" />
+          </LogicFilter>
+          <LogicFilter name="IRON">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-IRON" />
+          </LogicFilter>
+          <LogicFilter name="LEATHER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-LEATHER" />
+          </LogicFilter>
+          <LogicFilter name="WOOD">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-WOOD" />
+          </LogicFilter>
+          <LogicResultAction list="IRON" resultGroup="G1">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="LEATHER" resultGroup="G1">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="IRON" resultGroup="G2">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="AMBER" resultGroup="G2">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="adept" resultGroup="G2">
+            <scriptCallWithTag scriptName="FRA_ListSizeLessEqualThan" parameter="0" />
+          </LogicResultAction>
+          <LogicResultAction list="IRON" resultGroup="G3">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="AMBER" resultGroup="G3">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="adept" resultGroup="G3">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Espada de uma mão (ferro + couro + 4 de vida física)." group="G1" />
+      <outputs ownerID="2" targetID="4" fromX="825" fromY="-660" name="Artefato de uma mão (ferro + âmbar + 4 de vida física)." group="G2" />
+      <outputs ownerID="2" targetID="5" fromX="825" fromY="-740" name="Artefato superior (ferro + âmbar + 4 de vida física)." group="G3" />
+      <outputs ownerID="2" targetID="9" fromX="825" fromY="-820" name="Ver acessórios, armaduras e ferramentas." />
+      <outputs ownerID="2" targetID="10" fromX="825" fromY="-900" name="DES_DL_COOP_OFFICE" />Derictor monta a bigorna sobre um cepo. — Mostrem o que temos na bagagem. Faço uma peça hoje, se pudermos pagar o preço.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="9" positionX="3720" positionY="-30" width="350" height="660" image="DL_Event2">
+      <logic>
+        <FilterBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicProcessing name="adept" list1="derictor">
+            <scriptCallWithTag scriptName="FLP_FilterByTag" parameter="13" tag="TAG-DESTINY" />
+          </LogicProcessing>
+          <LogicFilter name="AMBER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-AMBER" />
+          </LogicFilter>
+          <LogicFilter name="IRON">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-IRON" />
+          </LogicFilter>
+          <LogicFilter name="LEATHER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-LEATHER" />
+          </LogicFilter>
+          <LogicFilter name="WOOD">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-WOOD" />
+          </LogicFilter>
+          <LogicResultAction list="AMBER" resultGroup="G1">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="LEATHER" resultGroup="G1">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="IRON" resultGroup="G2">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="LEATHER" resultGroup="G2">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="IRON" resultGroup="G3">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="WOOD" resultGroup="G3">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="9" targetID="6" fromX="4045" fromY="-580" name="Acessório (âmbar + couro + 4 de vida física)." group="G1" />
+      <outputs ownerID="9" targetID="7" fromX="4045" fromY="-660" name="Armadura média (ferro + couro + 4 de vida física)." group="G2" />
+      <outputs ownerID="9" targetID="8" fromX="4045" fromY="-740" name="Ferramenta de coleta (ferro + madeira + 4 de vida física)." group="G3" />
+      <outputs ownerID="9" targetID="2" fromX="4045" fromY="-820" name="Voltar às armas e aos artefatos." />
+      <outputs ownerID="9" targetID="10" fromX="4045" fromY="-900" name="Deixar a forja para depois." />Derictor separa as ferramentas menores. — Também posso fazer algo para proteger o corpo ou ajudar nas tarefas da viagem.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="960" positionY="-30" width="350" height="660" image="DL_Event2">
+      <logic>
+        <ModifierBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicFilter name="IRON">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-IRON" />
+          </LogicFilter>
+          <LogicProcessing name="one_IRON" list1="IRON">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_IRON">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicFilter name="LEATHER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-LEATHER" />
+          </LogicFilter>
+          <LogicProcessing name="one_LEATHER" list1="LEATHER">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_LEATHER">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicModifiers list="derictor">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-4" tag="TAG-HEALTH_PHYSICAL" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_SWORD_1H" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="10" fromX="1285" fromY="-580" name="Guardar o equipamento." />Derictor sela a peça com uma gota de sangue e a entrega ao grupo. Vocês recebem: espada de uma mão.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="4" positionX="1420" positionY="-30" width="350" height="660" image="DL_Event2">
+      <logic>
+        <ModifierBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicFilter name="IRON">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-IRON" />
+          </LogicFilter>
+          <LogicProcessing name="one_IRON" list1="IRON">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_IRON">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicFilter name="AMBER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-AMBER" />
+          </LogicFilter>
+          <LogicProcessing name="one_AMBER" list1="AMBER">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_AMBER">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicModifiers list="derictor">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-4" tag="TAG-HEALTH_PHYSICAL" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-DL_ADV_ARTIFACT_1H" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="4" targetID="10" fromX="1745" fromY="-580" name="Guardar o equipamento." />Derictor sela a peça com uma gota de sangue e a entrega ao grupo. Vocês recebem: artefato de uma mão.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="5" positionX="1880" positionY="-30" width="350" height="660" image="DL_Event2">
+      <logic>
+        <ModifierBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicFilter name="IRON">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-IRON" />
+          </LogicFilter>
+          <LogicProcessing name="one_IRON" list1="IRON">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_IRON">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicFilter name="AMBER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-AMBER" />
+          </LogicFilter>
+          <LogicProcessing name="one_AMBER" list1="AMBER">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_AMBER">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicModifiers list="derictor">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-4" tag="TAG-HEALTH_PHYSICAL" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-DL_STRONG_ARTIFACT_1H" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="5" targetID="10" fromX="2205" fromY="-580" name="Guardar o equipamento." />Derictor sela a peça com uma gota de sangue e a entrega ao grupo. Vocês recebem: artefato superior.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="6" positionX="2340" positionY="-30" width="350" height="660" image="DL_Event2">
+      <logic>
+        <ModifierBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicFilter name="AMBER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-AMBER" />
+          </LogicFilter>
+          <LogicProcessing name="one_AMBER" list1="AMBER">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_AMBER">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicFilter name="LEATHER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-LEATHER" />
+          </LogicFilter>
+          <LogicProcessing name="one_LEATHER" list1="LEATHER">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_LEATHER">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicModifiers list="derictor">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-4" tag="TAG-HEALTH_PHYSICAL" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_JEWELLERY" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="6" targetID="10" fromX="2665" fromY="-580" name="Guardar o equipamento." />Derictor sela a peça com uma gota de sangue e a entrega ao grupo. Vocês recebem: acessório.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="7" positionX="2800" positionY="-30" width="350" height="660" image="DL_Event2">
+      <logic>
+        <ModifierBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicFilter name="IRON">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-IRON" />
+          </LogicFilter>
+          <LogicProcessing name="one_IRON" list1="IRON">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_IRON">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicFilter name="LEATHER">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-LEATHER" />
+          </LogicFilter>
+          <LogicProcessing name="one_LEATHER" list1="LEATHER">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_LEATHER">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicModifiers list="derictor">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-4" tag="TAG-HEALTH_PHYSICAL" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_MEDIUM_ARMOUR" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="7" targetID="10" fromX="3125" fromY="-580" name="Guardar o equipamento." />Derictor sela a peça com uma gota de sangue e a entrega ao grupo. Vocês recebem: armadura média.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="8" positionX="3260" positionY="-30" width="350" height="660" image="DL_Event2">
+      <logic>
+        <ModifierBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicFilter name="IRON">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-IRON" />
+          </LogicFilter>
+          <LogicProcessing name="one_IRON" list1="IRON">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_IRON">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicFilter name="WOOD">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupResources" parameter="1" tag="TAG-WOOD" />
+          </LogicFilter>
+          <LogicProcessing name="one_WOOD" list1="WOOD">
+            <scriptCallWithTag scriptName="FLP_GetTopXElements" parameter="1" />
+          </LogicProcessing>
+          <LogicModifiers list="one_WOOD">
+            <scriptCallWithTag scriptName="FMO_TakeItems" />
+          </LogicModifiers>
+          <LogicModifiers list="derictor">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-4" tag="TAG-HEALTH_PHYSICAL" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_GATHERING_TOOL" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="8" targetID="10" fromX="3585" fromY="-580" name="Guardar o equipamento." />Derictor sela a peça com uma gota de sangue e a entrega ao grupo. Vocês recebem: ferramenta de coleta.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="10" positionX="4180" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="O Hóspede do Beiral" uniqueID="3" allowOnce="true" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="40" positionY="-30" width="350" height="660" image="DL_Event3">
+      <logic>
+        <FilterBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicResultAction list="derictor">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="365" fromY="-580" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="-30" width="350" height="660" image="DL_Event3">
+      <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Ajudar Derictor a completar o ritual." />
+      <outputs ownerID="2" targetID="4" fromX="825" fromY="-660" name="Deixar o morcego partir." />Um morcego observa vocês do beiral. Derictor desenha um círculo no chão e deposita um fio de magia no centro.
+
+— Se ele aceitar, saberá onde me encontrar. É um convite.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="960" positionY="-30" width="350" height="660" image="DL_Event3">
+      <logic>
+        <ModifierBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicModifiers list="derictor">
+            <scriptCallWithTag scriptName="FMO_ChangeLearnedSkillOnCharacter" parameter="1" tag="SKILL_PACK-DL_FAMILIAR" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_PET_CROW" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" fromX="1285" fromY="-580" name="Concluir o vínculo." />O morcego pousa no pulso de Derictor. Ele apaga o círculo e chama o corvo que guardava o beiral. O corvo aceita acompanhar um dos viajantes.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1420" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="Pacto da Noite" uniqueID="4" allowOnce="true" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="6" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="40" positionY="-30" width="350" height="660" image="DL_Event4">
+      <logic>
+        <FilterBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicResultAction list="derictor">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="10" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="25" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="365" fromY="-580" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="-30" width="350" height="660" image="DL_Event4">
+      <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Deixar Derictor oferecer um pacto." group="G1" />
+      <outputs ownerID="2" targetID="4" fromX="825" fromY="-660" name="Deixar Derictor oferecer um pacto." group="G1" />
+      <outputs ownerID="2" targetID="5" fromX="825" fromY="-740" name="Deixar Derictor oferecer um pacto." group="G1" />
+      <outputs ownerID="2" targetID="6" fromX="825" fromY="-820" name="Deixar o lobo seguir." />Um lobo de pelo escuro ronda o grupo há algum tempo. Derictor reconhece o gesto com que ele pede passagem.
+
+— Posso oferecer um lugar ao nosso lado. Cabe a ele aceitar.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="960" positionY="-30" width="350" height="660" image="DL_Event4">
+      <logic>
+        <FilterBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicProcessing name="adept" list1="derictor">
+            <scriptCallWithTag scriptName="FLP_FilterByTag" parameter="13" tag="TAG-DESTINY" />
+          </LogicProcessing>
+          <LogicResultAction list="adept">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="75" />
+          </LogicResultAction>
+        </FilterBlock>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddCharacterNoDefaultCargo" parameter="1" tag="SUBRACE-DL_LOBO_NOTURNO" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_PET_WOLF" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="6" fromX="1285" fromY="-580" name="Dar as boas-vindas ao lobo." />O lobo dá uma volta em torno de Derictor e senta. Ele seguirá com o grupo. Um segundo lobo, habituado à companhia de viajantes, aceita acompanhar um deles como companheiro equipável.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="4" positionX="1420" positionY="-30" width="350" height="660" image="DL_Event4">
+      <logic>
+        <FilterBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicProcessing name="adept" list1="derictor">
+            <scriptCallWithTag scriptName="FLP_FilterByTag" parameter="13" tag="TAG-DESTINY" />
+          </LogicProcessing>
+          <LogicResultAction list="adept">
+            <scriptCallWithTag scriptName="FRA_ListSizeLessEqualThan" parameter="0" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="45" />
+          </LogicResultAction>
+        </FilterBlock>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddCharacterNoDefaultCargo" parameter="1" tag="SUBRACE-DL_LOBO_NOTURNO" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_PET_WOLF" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="4" targetID="6" fromX="1745" fromY="-580" name="Dar as boas-vindas ao lobo." />O lobo dá uma volta em torno de Derictor e senta. Ele seguirá com o grupo. Um segundo lobo, habituado à companhia de viajantes, aceita acompanhar um deles como companheiro equipável.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="5" positionX="1880" positionY="-30" width="350" height="660" image="DL_Event4">
+      <outputs ownerID="5" targetID="6" fromX="2205" fromY="-580" name="Deixá-lo partir." />O lobo escuta até o fim e volta para o mato. Derictor recolhe a mão estendida. — O pacto era um convite.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="6" positionX="2340" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="O Preço da Eternidade" uniqueID="5" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="40" positionY="-30" width="350" height="660" image="DL_Event5">
+      <logic>
+        <FilterBlock>
+          <LogicFilter name="derictor">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
+          </LogicFilter>
+          <LogicFilter name="humanoids">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="TAG-HUMANOID" />
+          </LogicFilter>
+          <LogicFilter name="children">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="TAG-CHILD" />
+          </LogicFilter>
+          <LogicFilter name="unliving">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="TAG-UNLIVING" />
+          </LogicFilter>
+          <LogicFilter name="pending">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerAllGroupsCharacters" parameter="1" tag="TAG-DL_TURNING" />
+          </LogicFilter>
+          <LogicProcessing name="adults" list1="humanoids" list2="children">
+            <scriptCallWithTag scriptName="FLP_AminusB" />
+          </LogicProcessing>
+          <LogicProcessing name="living" list1="adults" list2="unliving">
+            <scriptCallWithTag scriptName="FLP_AminusB" />
+          </LogicProcessing>
+          <LogicProcessing name="volunteer" list1="living" makePublic="true">
+            <scriptCallWithTag scriptName="FLP_GetRandomXelementsIfPossible" parameter="1" />
+          </LogicProcessing>
+          <LogicResultAction list="derictor">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="volunteer">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction list="pending">
+            <scriptCallWithTag scriptName="FRA_ListSizeLessEqualThan" parameter="0" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="12" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="20" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="365" fromY="-580" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="-30" width="350" height="660" image="DL_Event5">
+      <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Consentir com o pacto e iniciar a transformação." />
+      <outputs ownerID="2" targetID="4" fromX="825" fromY="-660" name="Pedir que a decisão espere." />Uma pessoa do grupo procura Derictor ao cair da noite e lhe pede a eternidade. Derictor explica o preço: cinco turnos de fraqueza antes de despertar, e a luz do dia cobrará seu tributo para sempre. A pessoa ouve até o fim e mantém o pedido.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="960" positionY="-30" width="350" height="660" image="DL_Event5">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers list="volunteer">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="1" tag="TAG-DL_TURNING" />
+          </LogicModifiers>
+          <LogicModifiers list="volunteer">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-1" tag="TAG-STRENGTH" />
+          </LogicModifiers>
+          <LogicModifiers list="volunteer">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-1" tag="TAG-WITS" />
+          </LogicModifiers>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_StartTurning" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" fromX="1285" fromY="-580" name="Acompanhar a recuperação." />Derictor ensina a pessoa a beber magia. O corpo leva tempo para aceitá-la. Durante a transição, ela perde 1 de Força e 1 de Agilidade, mas ainda pode viajar com vocês.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1420" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="O Despertar do Pacto" uniqueID="6" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="3" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="40" positionY="-30" width="350" height="660" image="DL_Event6">
+      <logic>
+        <FilterBlock>
+          <LogicFilter name="pending_here">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="TAG-DL_TURNING" />
+          </LogicFilter>
+          <LogicResultAction list="pending_here">
+            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_TurningReady" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="365" fromY="-580" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="-30" width="350" height="660" image="DL_Event6">
+      <logic>
+        <ModifierBlock>
+          <LogicFilter name="pending_here">
+            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="TAG-DL_TURNING" />
+          </LogicFilter>
+          <LogicModifiers list="pending_here">
+            <scriptCallWithTag scriptName="FMO_SetTags" parameter="0" tag="TAG-DL_TURNING" />
+          </LogicModifiers>
+          <LogicModifiers list="pending_here">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="1" tag="TAG-STRENGTH" />
+          </LogicModifiers>
+          <LogicModifiers list="pending_here">
+            <scriptCallWithTag scriptName="FMO_AddTags" parameter="1" tag="TAG-WITS" />
+          </LogicModifiers>
+          <LogicModifiers list="pending_here">
+            <scriptCallWithTag scriptName="FMO_UpgradeToSubraceNoLevelReset" tag="SUBRACE-DL_VAMPIRE_NOVICE" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Receber o novo vampiro entre vocês." />A febre cede. A pessoa volta à roda do fogo e absorve uma centelha de magia sob o olhar de Derictor. O rito terminou. O novo vampiro confirma o pacto e permanece com o grupo.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="3" positionX="960" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+</MODULE>

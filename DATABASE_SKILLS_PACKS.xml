@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SKILLS_PACKS>
+  <SKILL_PACK-DL_VAMPIRE>
+    <RarityRange MinimumCount="0" MaximumCount="100" />
+    <GuarantedSkill Value="SKILL-RACE_UNLI" />
+    <GuarantedSkill Value="SKILL-DL_SIPHON" />
+    <GuarantedSkill Value="SKILL-DL_FORGE" />
+    <GuarantedSkill Value="SKILL-DL_SUNLIGHT" />
+    <SkillGroupFilters>
+      <SkillGroupSingleFilter Name="Fallback" Requirement="NecessaryType" />
+    </SkillGroupFilters>
+  </SKILL_PACK-DL_VAMPIRE>
+  <SKILL_PACK-DL_FAMILIAR>
+    <RarityRange MinimumCount="0" MaximumCount="100" />
+    <GuarantedSkill Value="SKILL-DL_CALL" />
+    <SkillGroupFilters>
+      <SkillGroupSingleFilter Name="Fallback" Requirement="NecessaryType" />
+    </SkillGroupFilters>
+  </SKILL_PACK-DL_FAMILIAR>
+  <SKILL_PACK-DL_NOVICE>
+    <RarityRange MinimumCount="0" MaximumCount="100" />
+    <GuarantedSkill Value="SKILL-RACE_UNLI" />
+    <GuarantedSkill Value="SKILL-DL_SIPHON" />
+    <GuarantedSkill Value="SKILL-DL_SUNLIGHT" />
+    <SkillGroupFilters>
+      <SkillGroupSingleFilter Name="Fallback" Requirement="NecessaryType" />
+    </SkillGroupFilters>
+  </SKILL_PACK-DL_NOVICE>
+</SKILLS_PACKS>

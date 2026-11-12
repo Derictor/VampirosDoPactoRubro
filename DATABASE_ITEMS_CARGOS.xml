@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ITEMS_CARGOS>
+  <ITEM_CARGO-DL_ADV_ARTIFACT_1H TrashChance="0" MasterChance="0">
+    <ResourceRarityRange MinimumCount="10" MaximumCount="30" />
+    <SkillRarityRange MinimumCount="20" MaximumCount="40" />
+    <LevelRange MinimumCount="2" MaximumCount="2" />
+    <NumberOfItems MinimumCount="1" MaximumCount="1" />
+    <RequiredTag Value="TAG-ARTIFACT_1H" />
+  </ITEM_CARGO-DL_ADV_ARTIFACT_1H>
+  <ITEM_CARGO-DL_STRONG_ARTIFACT_1H TrashChance="0" MasterChance="0">
+    <ResourceRarityRange MinimumCount="30" MaximumCount="50" />
+    <SkillRarityRange MinimumCount="40" MaximumCount="60" />
+    <LevelRange MinimumCount="3" MaximumCount="3" />
+    <NumberOfItems MinimumCount="1" MaximumCount="1" />
+    <RequiredTag Value="TAG-ARTIFACT_1H" />
+  </ITEM_CARGO-DL_STRONG_ARTIFACT_1H>
+</ITEMS_CARGOS>

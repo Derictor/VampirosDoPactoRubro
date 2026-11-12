@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SUBSKILLS_CHALLENGES>
+  <SUBSKILL-DL_SIPHON Delay="4.5" Animation="DrainVigour" Sound="SubskillWillDrain">
+    <DescriptionInfo Name="DES_DL_SIPHON" Description="DES_DL_SIPHON_DES" IconName="SubskillWillDrain" />
+    <ShortInfo TriggerIcon="TAG-TRIGGER_DO_ATTACK" DamageIcon="TAG-DAMAGE_LIFE_LEECH_ESSENCE" TargetIcon="TAG-TARGET_SINGLE_MELEE_ENEMY" AttackInfo="{SCRIPT:SI_Damage}" />
+    <Trigger Priority="0" RequiredToBeInFrontline="FALSE" RequiredToBeInBackline="FALSE">
+      <TriggerGroup Value="DoAttack" />
+      <TriggerScript ScriptName="" />
+    </Trigger>
+    <Targets>
+      <TargetScript ScriptName="Trg_MeleeTargeting" />
+      <TargetCountRange MinimumCount="1" MaximumCount="1" TargetIndication="Random" />
+    </Targets>
+    <Activation ScriptName="Act_DrainHealthEssence" />
+    <ChallengeType Value="TypeSpirit" />
+    <SubskillAttributesOnLevel Level="0" PowerLevel="0.0">
+      <MainAtt Amount="0" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="1" PowerLevel="10.0">
+      <MainAtt Amount="0.75" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="2" PowerLevel="30.0">
+      <MainAtt Amount="0.9" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="3" PowerLevel="90.0">
+      <MainAtt Amount="1.05" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="4" PowerLevel="250.0">
+      <MainAtt Amount="1.2" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="5" PowerLevel="500.0">
+      <MainAtt Amount="1.4" Tag="TAG-DESTINY" />
+    </SubskillAttributesOnLevel>
+  </SUBSKILL-DL_SIPHON>
+</SUBSKILLS_CHALLENGES>

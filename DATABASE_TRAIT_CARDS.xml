@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TRAIT_CARD_CARDS>
+  <TRAIT_CARD-DL_NIGHT_SPAWN UnlockCost="-1" UseCost="2">
+    <DescriptionInfo Name="DES_DL_NIGHT_SPAWN" Description="DES_DL_NIGHT_SPAWN_DES" IconName="DL_DerictorPortrait" />
+    <AddSubrace Value="SUBRACE-DL_DERICTOR" />
+    <DomainType Value="TAG-DOMAIN_MAGIC" />
+  </TRAIT_CARD-DL_NIGHT_SPAWN>
+</TRAIT_CARD_CARDS>

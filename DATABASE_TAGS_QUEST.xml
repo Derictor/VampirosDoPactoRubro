@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TAGS_QUEST>
+  <TAG-DL_TURNING Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="CharacterType" />
+  </TAG-DL_TURNING>
+  <TAG-DL_TURNING_DEADLINE Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_TURNING_DEADLINE>
+  <TAG-DL_LOYAL Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="CharacterType" />
+  </TAG-DL_LOYAL>
+</TAGS_QUEST>
