@@ -1,4 +1,4 @@
-# Vampiros do Pacto Rubro v0.2.5
+# Vampiros do Pacto Rubro v0.2.6
 
 Mod independente em português para Thea 2: The Shattering. Extraia a pasta VampirosDoPactoRubro em Thea2_Data\StreamingAssets\Mods, ative **Vampiros do Pacto Rubro** no menu Mods e reinicie o jogo.
 
@@ -21,9 +21,9 @@ Os XMLs foram conferidos contra os dados da versão Steam 2.1400.0687. A execuç
 
 O retrato e as seis cenas usam a mesma referência de Derictor. A edição feita com a ferramenta integrada preserva a cena, a pose e as outras figuras e padroniza o rosto pálido, o cabelo escuro ondulado, o bigode escuro curto e o cavanhaque aparado.
 
-## Traço inicial Cria da Noite
+## Traço inicial O Vampiro Rubro
 
-Recrute Derictor no encontro A Forja Depois do Anoitecer. A carta Cria da Noite é desbloqueada no perfil e custa 2 pontos na seleção de traços iniciais do domínio Magia. Se Derictor já estiver no seu grupo em uma partida salva, abra a Oficina Itinerante com ele para liberar a carta. Use o mesmo perfil do jogo na próxima partida.
+Recrute Derictor no encontro A Forja Depois do Anoitecer. A carta O Vampiro Rubro é desbloqueada no perfil e custa 2 pontos na seleção de traços iniciais do domínio Magia. Se Derictor já estiver no seu grupo em uma partida salva, abra a Oficina Itinerante com ele para liberar a carta. Use o mesmo perfil do jogo na próxima partida.
 
 ## Cooperativo
 

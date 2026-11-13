@@ -12,7 +12,7 @@
   <SCRIPT>DL_Coop.cs</SCRIPT>
   <STORY_MODULE>DL_AForjaRubra.xml</STORY_MODULE>
   <IMAGE Name="DL_DerictorPortrait" Model="StrigaMaster" Path="Derictor.png" MemoryStorage="true" TagMode="false" EventImage="false" />
-  <TAG>Characters</TAG> Vampiros do Pacto Rubro v0.2.5. Oficinas, pactos noturnos e transformação vampírica.<DB>DATABASE_TAGS_QUEST.xml</DB>
+  <TAG>Characters</TAG> Vampiros do Pacto Rubro v0.2.6. Oficinas, pactos noturnos e transformação vampírica.<DB>DATABASE_TAGS_QUEST.xml</DB>
   <IMAGE Name="DL_Event1" Path="EventForge.png" MemoryStorage="false" TagMode="false" EventImage="true" />
   <IMAGE Name="DL_Event2" Path="EventTemper.png" MemoryStorage="false" TagMode="false" EventImage="true" />
   <IMAGE Name="DL_Event3" Path="EventFamiliar.png" MemoryStorage="false" TagMode="false" EventImage="true" />

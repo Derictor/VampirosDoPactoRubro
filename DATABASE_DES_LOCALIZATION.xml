@@ -17,7 +17,7 @@
     <Entry Key="DES_DL_NOVICE_DES" Val="Em vida, pediu a Derictor o dom da eternidade. Conserva seu lugar no grupo e conhece o Sifão Arcano." />
     <Entry Key="DES_DL_SUNLIGHT" Val="Fraqueza à Luz do Dia" />
     <Entry Key="DES_DL_SUNLIGHT_DES" Val="Durante o dia, reduz em 10% os atributos principais do vampiro." />
-    <Entry Key="DES_DL_NIGHT_SPAWN" Val="Cria da Noite" />
+    <Entry Key="DES_DL_NIGHT_SPAWN" Val="O Vampiro Rubro" />
     <Entry Key="DES_DL_NIGHT_SPAWN_DES" Val="Comece com Derictor Lutoar, vampiro da Forja Rubra. Recrute-o em A Forja Depois do Anoitecer para desbloquear este traço no seu perfil." />
     <Entry Key="DES_DL_COOP_RECRUIT" Val="{SCRIPT:UIS_DL_RecruitAndUnlock}" />
     <Entry Key="DES_DL_COOP_OFFICE" Val="{SCRIPT:UIS_DL_OfficeAndUnlock}" />
