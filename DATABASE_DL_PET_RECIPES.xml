@@ -1,0 +1,20 @@
+<RECIPES_ITEMS>
+  <ITEM_REC-DL_PET_BAT ItemsAmount="0" WeightMultiplier="0.0">
+    <InventorySlot Value="Companion" />
+    <RecipeBase ResearchCost="-2">
+      <DescriptionInfo Name="DES_DL_BAT" Description="DES_DL_BAT_DES" IconName="DL_PetBat" />
+      <CountedTag Tag="TAG-DL_PET_BAT" Amount="1.0" />
+      <MaterialRow>
+        <Material ResourceCount="12">
+          <Resource Value="RES-BONE" />
+        </Material>
+      </MaterialRow>
+      <MaterialRow>
+        <Material ResourceCount="15">
+          <Resource Value="RES-MEAT" />
+        </Material>
+      </MaterialRow>
+    </RecipeBase>
+    <Skills Value="SKILL_PACK-DL_PET_BAT" />
+  </ITEM_REC-DL_PET_BAT>
+</RECIPES_ITEMS>

@@ -1,7 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
 <SUBRACES>
   <SUBRACE-DL_DERICTOR>
-    <DescriptionInfo Name="DES_DL_CLASS" Description="DES_DL_CLASS_DES" IconName="ClassWitch" />
+    <DescriptionInfo Name="DES_DL_CLASS" Description="DES_DL_CLASS_DES" IconName="DL_ClassVampire" />
     <Race Value="RACE-UNLIVING" />
     <SecondSubraceAttributes Amount="1" Tag="TAG-HUMANOID" />
     <SecondSubraceAttributes Amount="1" Tag="TAG-UNLIVING" />
@@ -110,7 +109,7 @@
     <BodyCargo Chance="50" ItemCargo="ITEM_CARGO-FEW_FUR_LEATHER" />
   </SUBRACE-DL_LOBO_NOTURNO>
   <SUBRACE-DL_VAMPIRE_NOVICE>
-    <DescriptionInfo Name="DES_DL_NOVICE" Description="DES_DL_NOVICE_DES" IconName="ClassWitch" />
+    <DescriptionInfo Name="DES_DL_NOVICE" Description="DES_DL_NOVICE_DES" IconName="DL_ClassVampire" />
     <Race Value="RACE-UNLIVING" />
     <SecondSubraceAttributes Amount="1" Tag="TAG-HUMANOID" />
     <SecondSubraceAttributes Amount="1" Tag="TAG-UNLIVING" />

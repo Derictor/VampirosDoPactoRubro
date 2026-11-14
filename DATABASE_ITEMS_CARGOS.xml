@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <ITEMS_CARGOS>
   <ITEM_CARGO-DL_ADV_ARTIFACT_1H TrashChance="0" MasterChance="0">
     <ResourceRarityRange MinimumCount="10" MaximumCount="30" />
@@ -14,4 +13,11 @@
     <NumberOfItems MinimumCount="1" MaximumCount="1" />
     <RequiredTag Value="TAG-ARTIFACT_1H" />
   </ITEM_CARGO-DL_STRONG_ARTIFACT_1H>
+  <ITEM_CARGO-DL_PET_BAT TrashChance="0" MasterChance="0">
+    <ResourceRarityRange MinimumCount="16" MaximumCount="51" />
+    <SkillRarityRange MinimumCount="0" MaximumCount="50" />
+    <LevelRange MinimumCount="2" MaximumCount="2" />
+    <NumberOfItems MinimumCount="1" MaximumCount="1" />
+    <RequiredTag Value="TAG-DL_PET_BAT" />
+  </ITEM_CARGO-DL_PET_BAT>
 </ITEMS_CARGOS>

@@ -1,15 +1,17 @@
-<?xml version='1.0' encoding='utf-8'?>
 <CHARACTER_NAMES>
-  <NAME_COLLECTION-DL_DERICTOR Language="Any">
+  <NAME_COLLECTION-DL_DERICTOR>
+    <Race Value="RACE-UNLIVING" />
     <Subrace Value="SUBRACE-DL_DERICTOR" />
     <CharacterMale Value="Derictor Lutoar" />
   </NAME_COLLECTION-DL_DERICTOR>
-  <NAME_COLLECTION-DL_BAT Language="Any">
+  <NAME_COLLECTION-DL_BAT>
+    <Race Value="RACE-BEAST" />
     <Subrace Value="SUBRACE-DL_FAMILIAR" />
     <CharacterMale Value="Familiar" />
     <CharacterFemale Value="Familiar" />
   </NAME_COLLECTION-DL_BAT>
-  <NAME_COLLECTION-DL_WOLF Language="Any">
+  <NAME_COLLECTION-DL_WOLF>
+    <Race Value="RACE-BEAST" />
     <Subrace Value="SUBRACE-DL_LOBO_NOTURNO" />
     <CharacterMale Value="Lobo Noturno" />
     <CharacterFemale Value="Loba Noturna" />

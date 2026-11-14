@@ -1,0 +1,8 @@
+<SKILLS_4_OTHER>
+  <SKILL-DL_PACT_WEAKNESS Rarity="0">
+    <DescriptionInfo Name="DES_DL_PACT_WEAKNESS" Description="DES_DL_PACT_WEAKNESS_DES" IconName="SkillCurseP" />
+    <BaseEssence Amount="0" Tag="TAG-ESSENCE_GRAY" />
+    <SkillSubskill Value="SUBSKILL-DL_PACT_WEAKNESS" />
+    <SkillGroupFilter Value="DL_PactWeakness" />
+  </SKILL-DL_PACT_WEAKNESS>
+</SKILLS_4_OTHER>

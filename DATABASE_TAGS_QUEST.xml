@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <TAGS_QUEST>
   <TAG-DL_TURNING Visible="FALSE">
     <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
@@ -12,4 +11,47 @@
     <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
     <TagType Value="CharacterType" />
   </TAG-DL_LOYAL>
+  <TAG-DL_NOITE_LOBO Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_NOITE_LOBO>
+  <TAG-DL_NOITE_ESPECTRO Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_NOITE_ESPECTRO>
+  <TAG-DL_NOITE_IMP Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_NOITE_IMP>
+  <TAG-DL_NOITE_ARANHA Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_NOITE_ARANHA>
+  <TAG-DL_NOITE_ESTRIGE Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_NOITE_ESTRIGE>
+  <TAG-DL_NOITE_GATO Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_NOITE_GATO>
+  <TAG-DL_NOITE_LOBISOMEM Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_NOITE_LOBISOMEM>
+  <TAG-DL_NOITE_SINO Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_NOITE_SINO>
+  <TAG-DL_TURNING_EFFECT Visible="FALSE">
+    <DescriptionInfo Name="DES_DL_PACT_WEAKNESS" Description="DES_DL_PACT_WEAKNESS_DES" IconName="SkillCurseP" />
+    <TagType Value="CharacterType" />
+  </TAG-DL_TURNING_EFFECT>
+  <TAG-DL_WOLF_PACT_OUTCOME Visible="FALSE">
+    <DescriptionInfo Name="DES_PLACEHOLDER" Description="DES_PLACEHOLDER_DES" IconName="IconPlaceholder" />
+    <TagType Value="WorldType" />
+  </TAG-DL_WOLF_PACT_OUTCOME>
+  <TAG-DL_UNIQUE_RECRUITED Visible="FALSE" UseCount="TRUE">
+    <TagType Value="WorldType" />
+  </TAG-DL_UNIQUE_RECRUITED>
 </TAGS_QUEST>

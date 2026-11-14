@@ -1,5 +1,4 @@
 using DBDef;
-using Thea2.Client;
 using Thea2.Common;
 using Thea2.Server;
 
@@ -7,51 +6,95 @@ namespace GameScript
 {
     public class DL_Coop : ScriptBase
     {
-        private const string CardId = "TRAIT_CARD-DL_NIGHT_SPAWN";
-        private const string ModuleName = "DL_AForjaRubra";
         private const string DeadlineId = "TAG-DL_TURNING_DEADLINE";
 
-        public static string UIS_DL_RecruitAndUnlock(object unused)
-        {
-            UnlockForCurrentPlayer(1, 3);
-            return "Receber Derictor no grupo.";
-        }
-
-        public static string UIS_DL_OfficeAndUnlock(object unused)
-        {
-            UnlockForCurrentPlayer(2, 2);
-            return "Deixar a forja para depois.";
-        }
-
-        private static void UnlockForCurrentPlayer(int eventId, int nodeId)
-        {
-            var profile = PlayerProfile.selectedProfile;
-            if (profile == null || FSMCoreGame.Get() == null)
-                return;
-
-            var waiting = FSMCoreGame.GetAdventuresWaiting();
-            if (waiting == null || waiting.Count == 0)
-                return;
-
-            var adventure = waiting[0];
-            var visited = adventure.visitedNodes;
-            if (adventure.mainPlayerID != NetworkManager.GetLocalPlayerID()
-                || adventure.moduleName != ModuleName || adventure.advIndex != eventId
-                || visited == null || visited.Count == 0 || visited[visited.Count - 1] != nodeId)
-                return;
-
-            var card = Globals.GetInstanceFromDB<Trait>(CardId);
-            if (card != null && profile.Unlock(card))
-                PlayerProfile.Save();
-        }
+        private const string PendingId = "TAG-DL_TURNING";
+        private const string EffectMarkerId = "TAG-DL_TURNING_EFFECT";
+        private const string WeaknessPackId = "SKILL_PACK-DL_PACT_WEAKNESS";
 
         [ScriptAttribute(null)]
         public static void FMO_DL_StartTurning(NOAdventureStatus status, AdventureEventData data,
             LogicModifier modifier, AdvNode node)
         {
             var player = GameInstance.Get().GetPlayer(data.GetMainPlayerID());
-            var tag = Globals.GetInstanceFromDB<Tag>(DeadlineId);
-            player.attributes.SetBaseTo(tag, (float)ServerManager.GetTurnManager().tunrIndex + 5);
+            var group = data.GetMainPlayerGroup();
+            var list = data.GetList(modifier.list, node);
+            var pending = Globals.GetInstanceFromDB<Tag>(PendingId);
+            var effectMarker = Globals.GetInstanceFromDB<Tag>(EffectMarkerId);
+            var deadline = Globals.GetInstanceFromDB<Tag>(DeadlineId);
+            var pack = Globals.GetInstanceFromDB<SkillPack>(WeaknessPackId);
+            if (player == null || group == null || group.abstractGroup || list == null ||
+                pending == null || effectMarker == null || deadline == null || pack == null)
+                return;
+
+            foreach (var key in list.GetList())
+            {
+                var character = list.GetItem(key).item as Character;
+                if (character == null || character.group.Get() != group ||
+                    character.attributes.Contains(pending, FInt.ONE))
+                    continue;
+
+                var effect = character.AddSkillEffect(pack, true, 1);
+                if (effect == null)
+                    return;
+
+                character.attributes.SetBaseTo(effectMarker, FInt.ONE);
+                character.attributes.SetBaseTo(pending, FInt.ONE);
+                player.attributes.SetBaseTo(deadline, (float)ServerManager.GetTurnManager().tunrIndex + 5);
+                var change = new AdventureEventDataChange();
+                change.GatherReferenceInfo(character);
+                change.playerID = group.ownerID;
+                var block = new AdventureEventDataBlock();
+                block.tagDBName = effect.source.dbName;
+                block.changeValue = effect.level;
+                block.skillData = new NetSkillData(effect.source.dbName, effect.level, 0, effect.GetDelayMultiplier());
+                change.advChanges.Add(block);
+                data.AddUncollectedAdventureChange(change);
+                return;
+            }
+        }
+
+        [ScriptAttribute(typeof(Subrace))]
+        public static void FMO_DL_FinishTurning(NOAdventureStatus status, AdventureEventData data,
+            LogicModifier modifier, AdvNode node)
+        {
+            var group = data.GetMainPlayerGroup();
+            var list = data.GetList(modifier.list, node);
+            var form = Globals.GetInstanceFromDB<Subrace>(modifier.scriptCallWithTag.tag);
+            var pending = Globals.GetInstanceFromDB<Tag>(PendingId);
+            var effectMarker = Globals.GetInstanceFromDB<Tag>(EffectMarkerId);
+            var pack = Globals.GetInstanceFromDB<SkillPack>(WeaknessPackId);
+            if (group == null || group.abstractGroup || list == null || form == null ||
+                pending == null || effectMarker == null || pack == null)
+                return;
+
+            foreach (var key in list.GetList())
+            {
+                var character = list.GetItem(key).item as Character;
+                if (character == null || character.group.Get() != group ||
+                    !character.attributes.Contains(pending, FInt.ONE))
+                    continue;
+
+                var effect = character.GetSkillEffectOnCharacterMatchingSkillpack(pack);
+                if (effect != null)
+                    character.RemoveSkill(effect);
+
+                // Older saves used base-stat changes instead of a temporary effect.
+                if (!character.attributes.Contains(effectMarker, FInt.ONE))
+                {
+                    character.attributes.AddToBase((Tag)TAG.STRENGTH, 1f);
+                    character.attributes.AddToBase((Tag)TAG.WITS, 1f);
+                }
+
+                character.UpgradeSubraceTo(form, true, false);
+                character.attributes.SetBaseTo(effectMarker, FInt.ZERO);
+                character.attributes.SetBaseTo(pending, FInt.ZERO);
+                var change = new AdventureEventDataChange();
+                change.GatherReferenceInfo(character);
+                change.playerID = group.ownerID;
+                change.count = 1;
+                data.AddUncollectedAdventureChange(change);
+            }
         }
 
         [ScriptAttribute(null)]

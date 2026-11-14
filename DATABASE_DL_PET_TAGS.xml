@@ -1,0 +1,7 @@
+<TAGS>
+  <TAG-DL_PET_BAT Visible="TRUE">
+    <DescriptionInfo Name="DES_DL_BAT" Description="DES_DL_BAT_DES" IconName="DL_PetBat" />
+    <TagType Value="ItemType" />
+    <Parent Value="TAG-PET" />
+  </TAG-DL_PET_BAT>
+</TAGS>

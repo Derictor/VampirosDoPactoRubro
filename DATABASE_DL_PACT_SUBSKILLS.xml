@@ -1,0 +1,39 @@
+<SUBSKILLS_WORLD>
+  <SUBSKILL-DL_PACT_WEAKNESS Delay="0.0" Animation="" Sound="">
+    <DescriptionInfo Name="DES_DL_PACT_WEAKNESS" Description="DES_DL_PACT_WEAKNESS_DES" IconName="SkillCurseP" />
+    <ShortInfo TriggerIcon="TAG-TRIGGER_PASSIVE" DamageIcon="TAG-DAMAGE_ADD_WITS" TargetIcon="TAG-TARGET_SELF" AttackInfo="{SCRIPT:SI_DefaultAttributeChange}" />
+    <Trigger Priority="10" RequiredToBeInFrontline="FALSE" RequiredToBeInBackline="FALSE">
+      <TriggerGroup Value="Passive" />
+      <TriggerScript ScriptName="" />
+    </Trigger>
+    <Targets>
+      <TargetScript ScriptName="Trg_Self" />
+      <TargetCountRange MinimumCount="1" MaximumCount="1" TargetIndication="Random" />
+    </Targets>
+    <Activation ScriptName="WAct_AttributeChange" />
+    <SubskillAttributesOnLevel Level="0" PowerLevel="0.0">
+      <SubskillAttribute Identifier="TAG-PERCEPTION" AttributeStringValue="+" AttributeFloatValue="-1" />
+      <SubskillAttribute Identifier="TAG-WITS" AttributeStringValue="+" AttributeFloatValue="-1" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="1" PowerLevel="0.0">
+      <SubskillAttribute Identifier="TAG-PERCEPTION" AttributeStringValue="+" AttributeFloatValue="-1" />
+      <SubskillAttribute Identifier="TAG-WITS" AttributeStringValue="+" AttributeFloatValue="-1" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="2" PowerLevel="0.0">
+      <SubskillAttribute Identifier="TAG-PERCEPTION" AttributeStringValue="+" AttributeFloatValue="-1" />
+      <SubskillAttribute Identifier="TAG-WITS" AttributeStringValue="+" AttributeFloatValue="-1" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="3" PowerLevel="0.0">
+      <SubskillAttribute Identifier="TAG-PERCEPTION" AttributeStringValue="+" AttributeFloatValue="-1" />
+      <SubskillAttribute Identifier="TAG-WITS" AttributeStringValue="+" AttributeFloatValue="-1" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="4" PowerLevel="0.0">
+      <SubskillAttribute Identifier="TAG-PERCEPTION" AttributeStringValue="+" AttributeFloatValue="-1" />
+      <SubskillAttribute Identifier="TAG-WITS" AttributeStringValue="+" AttributeFloatValue="-1" />
+    </SubskillAttributesOnLevel>
+    <SubskillAttributesOnLevel Level="5" PowerLevel="0.0">
+      <SubskillAttribute Identifier="TAG-PERCEPTION" AttributeStringValue="+" AttributeFloatValue="-1" />
+      <SubskillAttribute Identifier="TAG-WITS" AttributeStringValue="+" AttributeFloatValue="-1" />
+    </SubskillAttributesOnLevel>
+  </SUBSKILL-DL_PACT_WEAKNESS>
+</SUBSKILLS_WORLD>

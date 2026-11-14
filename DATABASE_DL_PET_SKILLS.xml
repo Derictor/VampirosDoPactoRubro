@@ -1,0 +1,10 @@
+<SKILLS_CHALLENGES_ITEMS>
+  <SKILL-DL_PET_BAT Rarity="0">
+    <DescriptionInfo Name="DES_DL_PET_BAT_SKILL" Description="DES_DL_PET_BAT_SKILL_DES" IconName="DL_PetBat" />
+    <BaseEssence Amount="6" Tag="TAG-ESSENCE_GRAY" />
+    <SkillSubskill Value="SUBSKILL-ADD_WEAK_PERCEPTION" />
+    <SkillSubskill Value="SUBSKILL-ADD_WEAK_RITUALS" />
+    <SkillGroupFilter Value="Pet" />
+    <SkillGroupFilter Value="DL_PetBat" />
+  </SKILL-DL_PET_BAT>
+</SKILLS_CHALLENGES_ITEMS>

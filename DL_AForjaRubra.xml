@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<MODULE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="DL_AForjaRubra" lastEventIndex="6" allowToUse="true" uniqueModuleID="1726283471">
+<MODULE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="DL_AForjaRubra" lastEventIndex="16" allowToUse="true" uniqueModuleID="1726283471">
   <Adventure name="A Forja Depois do Anoitecer" uniqueID="1" allowOnce="true" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
     <nodes xsi:type="NodeStarting" ID="1" positionX="40" positionY="-30" width="350" height="660" image="DL_Event1">
       <logic>
@@ -10,11 +10,8 @@
           <LogicResultAction>
             <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
           </LogicResultAction>
-          <LogicFilter name="existing_derictor">
-            <scriptCallWithTag scriptName="FwT_ThisPlayerAllGroupsCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
-          </LogicFilter>
-          <LogicResultAction list="existing_derictor">
-            <scriptCallWithTag scriptName="FRA_ListSizeLessEqualThan" parameter="0" />
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_UniqueRecruitment" />
           </LogicResultAction>
         </FilterBlock>
       </logic>
@@ -24,25 +21,18 @@
       <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Ajudar na forja e convidar Derictor a viajar." />
       <outputs ownerID="2" targetID="4" fromX="825" fromY="-660" name="Agradecer a conversa e seguir viagem." />Uma oficina ainda está acesa. O ferreiro, pálido à luz das brasas, puxa para si a magia que escapa de uma lâmina e termina de gravar a têmpera com uma gota do próprio sangue.
 
-— Derictor Lutoar. Busquei a eternidade porque tinha mais coisas para aprender do que anos para viver. Se ainda houver boas oficinas pelo seu caminho, me interessa saber aonde vão.</nodes>
+Ao notar vocês na porta, o ferreiro pousa a tenaz e sorri.
+
+— Entrem, se quiserem fugir do frio. Sou Derictor Lutoar. Busquei a eternidade porque uma vida só era pouco para tudo que eu queria aprender. Pra onde vocês vão? Se houver uma boa forja pelo caminho, aceito companhia.</nodes>
     <nodes xsi:type="NodeAdventure" ID="3" positionX="960" positionY="-30" width="350" height="660" image="DL_Event1">
       <logic>
         <ModifierBlock>
           <LogicModifiers>
-            <scriptCallWithTag scriptName="FMO_AddCharacter" parameter="1" tag="SUBRACE-DL_DERICTOR" />
-          </LogicModifiers>
-          <LogicModifiers>
-            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-FEW_IRON" />
-          </LogicModifiers>
-          <LogicModifiers>
-            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ONE_AMBER" />
-          </LogicModifiers>
-          <LogicModifiers>
-            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ONE_LEATHER" />
+            <scriptCallWithTag scriptName="FMO_DL_UniqueRecruitment" />
           </LogicModifiers>
         </ModifierBlock>
       </logic>
-      <outputs ownerID="3" targetID="4" fromX="1285" fromY="-580" name="DES_DL_COOP_RECRUIT" />Derictor apaga as brasas, guarda as ferramentas e segue com vocês.</nodes>
+      <outputs ownerID="3" targetID="4" fromX="1285" fromY="-580" name="Partir." />Derictor apaga as brasas e guarda as ferramentas.</nodes>
     <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1420" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
   </Adventure>
   <Adventure name="A Oficina Itinerante" uniqueID="2" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="10" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
@@ -398,14 +388,14 @@
             <scriptCallWithTag scriptName="FMO_ChangeLearnedSkillOnCharacter" parameter="1" tag="SKILL_PACK-DL_FAMILIAR" />
           </LogicModifiers>
           <LogicModifiers>
-            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_PET_CROW" />
+            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-DL_PET_BAT" />
           </LogicModifiers>
         </ModifierBlock>
       </logic>
-      <outputs ownerID="3" targetID="4" fromX="1285" fromY="-580" name="Concluir o vínculo." />O morcego pousa no pulso de Derictor. Ele apaga o círculo e chama o corvo que guardava o beiral. O corvo aceita acompanhar um dos viajantes.</nodes>
+      <outputs ownerID="3" targetID="4" fromX="1285" fromY="-580" name="Concluir o vínculo." />O morcego pousa no pulso de Derictor. Quando ele apaga o círculo, o animal passa para o ombro de um dos viajantes. A partir de agora, pode acompanhá-los como familiar.</nodes>
     <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1420" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
   </Adventure>
-  <Adventure name="Pacto da Noite" uniqueID="4" allowOnce="true" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="6" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+  <Adventure name="Pacto da Noite" uniqueID="4" allowOnce="true" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="7" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
     <nodes xsi:type="NodeStarting" ID="1" positionX="40" positionY="-30" width="350" height="660" image="DL_Event4">
       <logic>
         <FilterBlock>
@@ -429,66 +419,52 @@
       <outputs ownerID="1" targetID="2" fromX="365" fromY="-580" />
     </nodes>
     <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="-30" width="350" height="660" image="DL_Event4">
-      <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Deixar Derictor oferecer um pacto." group="G1" />
-      <outputs ownerID="2" targetID="4" fromX="825" fromY="-660" name="Deixar Derictor oferecer um pacto." group="G1" />
-      <outputs ownerID="2" targetID="5" fromX="825" fromY="-740" name="Deixar Derictor oferecer um pacto." group="G1" />
+      <outputs ownerID="2" targetID="7" fromX="825" fromY="-580" name="Deixar Derictor oferecer um pacto." />
       <outputs ownerID="2" targetID="6" fromX="825" fromY="-820" name="Deixar o lobo seguir." />Um lobo de pelo escuro ronda o grupo há algum tempo. Derictor reconhece o gesto com que ele pede passagem.
 
-— Posso oferecer um lugar ao nosso lado. Cabe a ele aceitar.</nodes>
+  — Posso oferecer um lugar ao nosso lado. Cabe a ele aceitar.</nodes>
     <nodes xsi:type="NodeAdventure" ID="3" positionX="960" positionY="-30" width="350" height="660" image="DL_Event4">
       <logic>
         <FilterBlock>
-          <LogicFilter name="derictor">
-            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
-          </LogicFilter>
-          <LogicProcessing name="adept" list1="derictor">
-            <scriptCallWithTag scriptName="FLP_FilterByTag" parameter="13" tag="TAG-DESTINY" />
-          </LogicProcessing>
-          <LogicResultAction list="adept">
-            <scriptCallWithTag scriptName="FRA_ListSizeMoreEqualThan" parameter="1" />
-          </LogicResultAction>
           <LogicResultAction>
-            <scriptCallWithTag scriptName="FRA_Chance" parameter="75" />
+            <scriptCallWithTag scriptName="FRA_DL_WolfOutcome" parameter="3" />
           </LogicResultAction>
         </FilterBlock>
         <ModifierBlock>
           <LogicModifiers>
             <scriptCallWithTag scriptName="FMO_AddCharacterNoDefaultCargo" parameter="1" tag="SUBRACE-DL_LOBO_NOTURNO" />
           </LogicModifiers>
-          <LogicModifiers>
-            <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_PET_WOLF" />
-          </LogicModifiers>
         </ModifierBlock>
       </logic>
-      <outputs ownerID="3" targetID="6" fromX="1285" fromY="-580" name="Dar as boas-vindas ao lobo." />O lobo dá uma volta em torno de Derictor e senta. Ele seguirá com o grupo. Um segundo lobo, habituado à companhia de viajantes, aceita acompanhar um deles como companheiro equipável.</nodes>
-    <nodes xsi:type="NodeAdventure" ID="4" positionX="1420" positionY="-30" width="350" height="660" image="DL_Event4">
+      <outputs ownerID="3" targetID="6" fromX="1285" fromY="-580" name="Dar as boas-vindas ao lobo." />O lobo dá uma volta em torno de Derictor e se senta ao lado dele. Ao amanhecer, segue viagem com a expedição como membro do grupo.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="4" positionX="1420" positionY="-750" width="350" height="660" image="DL_Event4">
       <logic>
         <FilterBlock>
-          <LogicFilter name="derictor">
-            <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="SUBRACE-DL_DERICTOR" />
-          </LogicFilter>
-          <LogicProcessing name="adept" list1="derictor">
-            <scriptCallWithTag scriptName="FLP_FilterByTag" parameter="13" tag="TAG-DESTINY" />
-          </LogicProcessing>
-          <LogicResultAction list="adept">
-            <scriptCallWithTag scriptName="FRA_ListSizeLessEqualThan" parameter="0" />
-          </LogicResultAction>
           <LogicResultAction>
-            <scriptCallWithTag scriptName="FRA_Chance" parameter="45" />
+            <scriptCallWithTag scriptName="FRA_DL_WolfOutcome" parameter="4" />
           </LogicResultAction>
         </FilterBlock>
         <ModifierBlock>
-          <LogicModifiers>
-            <scriptCallWithTag scriptName="FMO_AddCharacterNoDefaultCargo" parameter="1" tag="SUBRACE-DL_LOBO_NOTURNO" />
-          </LogicModifiers>
           <LogicModifiers>
             <scriptCallWithTag scriptName="FMO_AddItems" parameter="1" tag="ITEM_CARGO-ADV_ONE_PET_WOLF" />
           </LogicModifiers>
         </ModifierBlock>
       </logic>
-      <outputs ownerID="4" targetID="6" fromX="1745" fromY="-580" name="Dar as boas-vindas ao lobo." />O lobo dá uma volta em torno de Derictor e senta. Ele seguirá com o grupo. Um segundo lobo, habituado à companhia de viajantes, aceita acompanhar um deles como companheiro equipável.</nodes>
-    <nodes xsi:type="NodeAdventure" ID="5" positionX="1880" positionY="-30" width="350" height="660" image="DL_Event4">
+      <outputs ownerID="4" targetID="6" fromX="1745" fromY="-580" name="Dar as boas-vindas ao lobo." />O lobo fareja a mão de Derictor e se acomoda junto à fogueira. Escolheu acompanhar um dos viajantes como familiar equipável.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="5" positionX="1880" positionY="-1470" width="350" height="660" image="DL_Event4">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_WolfOutcome" parameter="5" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
       <outputs ownerID="5" targetID="6" fromX="2205" fromY="-580" name="Deixá-lo partir." />O lobo escuta até o fim e volta para o mato. Derictor recolhe a mão estendida. — O pacto era um convite.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="7" positionX="960" positionY="-2190" width="350" height="660" image="DL_Event4">
+    <logic><ModifierBlock><LogicModifiers><scriptCallWithTag scriptName="FMO_DL_RollWolfPact" /></LogicModifiers></ModifierBlock></logic>
+    <outputs ownerID="7" targetID="3" fromX="1285" fromY="-2740" name="Aguardar a resposta do lobo." group="G1" />
+    <outputs ownerID="7" targetID="4" fromX="1285" fromY="-2820" name="Aguardar a resposta do lobo." group="G1" />
+    <outputs ownerID="7" targetID="5" fromX="1285" fromY="-2900" name="Aguardar a resposta do lobo." group="G1" />Derictor estende a mão e espera. À luz da fogueira, o lobo ergue a cabeça.</nodes>
     <nodes xsi:type="NodeAdventureEnd" ID="6" positionX="2340" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
   </Adventure>
   <Adventure name="O Preço da Eternidade" uniqueID="5" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
@@ -543,25 +519,16 @@
     </nodes>
     <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="-30" width="350" height="660" image="DL_Event5">
       <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Consentir com o pacto e iniciar a transformação." />
-      <outputs ownerID="2" targetID="4" fromX="825" fromY="-660" name="Pedir que a decisão espere." />Uma pessoa do grupo procura Derictor ao cair da noite e lhe pede a eternidade. Derictor explica o preço: cinco turnos de fraqueza antes de despertar, e a luz do dia cobrará seu tributo para sempre. A pessoa ouve até o fim e mantém o pedido.</nodes>
+      <outputs ownerID="2" targetID="4" fromX="825" fromY="-660" name="Pedir que a decisão espere." />Uma pessoa do grupo procura Derictor ao cair da noite e lhe pede a eternidade. Derictor explica que o pacto traz cinco turnos de fraqueza. Depois, o coração vai parar. A magia que sustenta o rito chamará a pessoa de volta como vampiro, e a luz do dia cobrará seu tributo. A pessoa ouve até o fim e mantém o pedido.</nodes>
     <nodes xsi:type="NodeAdventure" ID="3" positionX="960" positionY="-30" width="350" height="660" image="DL_Event5">
       <logic>
         <ModifierBlock>
           <LogicModifiers list="volunteer">
-            <scriptCallWithTag scriptName="FMO_AddTags" parameter="1" tag="TAG-DL_TURNING" />
-          </LogicModifiers>
-          <LogicModifiers list="volunteer">
-            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-1" tag="TAG-STRENGTH" />
-          </LogicModifiers>
-          <LogicModifiers list="volunteer">
-            <scriptCallWithTag scriptName="FMO_AddTags" parameter="-1" tag="TAG-WITS" />
-          </LogicModifiers>
-          <LogicModifiers>
             <scriptCallWithTag scriptName="FMO_DL_StartTurning" />
           </LogicModifiers>
         </ModifierBlock>
       </logic>
-      <outputs ownerID="3" targetID="4" fromX="1285" fromY="-580" name="Acompanhar a recuperação." />Derictor ensina a pessoa a beber magia. O corpo leva tempo para aceitá-la. Durante a transição, ela perde 1 de Força e 1 de Agilidade, mas ainda pode viajar com vocês.</nodes>
+      <outputs ownerID="3" targetID="4" fromX="1285" fromY="-580" name="Acompanhar a recuperação." />O voluntário bebe a magia da taça. Sua visão perde o foco e seus reflexos ficam mais lentos. A Fraqueza do Pacto reduz Percepção e Astúcia em 1 até o despertar.</nodes>
     <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1420" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
   </Adventure>
   <Adventure name="O Despertar do Pacto" uniqueID="6" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="3" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
@@ -588,20 +555,351 @@
             <scriptCallWithTag scriptName="FwT_ThisPlayerThisGroupCharacters" parameter="1" tag="TAG-DL_TURNING" />
           </LogicFilter>
           <LogicModifiers list="pending_here">
-            <scriptCallWithTag scriptName="FMO_SetTags" parameter="0" tag="TAG-DL_TURNING" />
-          </LogicModifiers>
-          <LogicModifiers list="pending_here">
-            <scriptCallWithTag scriptName="FMO_AddTags" parameter="1" tag="TAG-STRENGTH" />
-          </LogicModifiers>
-          <LogicModifiers list="pending_here">
-            <scriptCallWithTag scriptName="FMO_AddTags" parameter="1" tag="TAG-WITS" />
-          </LogicModifiers>
-          <LogicModifiers list="pending_here">
-            <scriptCallWithTag scriptName="FMO_UpgradeToSubraceNoLevelReset" tag="SUBRACE-DL_VAMPIRE_NOVICE" />
+            <scriptCallWithTag scriptName="FMO_DL_FinishTurning" tag="SUBRACE-DL_VAMPIRE_NOVICE" />
           </LogicModifiers>
         </ModifierBlock>
       </logic>
-      <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Receber o novo vampiro entre vocês." />A febre cede. A pessoa volta à roda do fogo e absorve uma centelha de magia sob o olhar de Derictor. O rito terminou. O novo vampiro confirma o pacto e permanece com o grupo.</nodes>
+      <outputs ownerID="2" targetID="3" fromX="825" fromY="-580" name="Receber o novo vampiro entre vocês." />A respiração cessa. Derictor procura o pulso do voluntário e espera até o coração parar. Então aproxima da boca dele a última centelha guardada no cálice. A magia do pacto atravessa o corpo. Os olhos se abrem, e o novo vampiro reconhece os companheiros ao redor.</nodes>
     <nodes xsi:type="NodeAdventureEnd" ID="3" positionX="960" positionY="-30" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="O Lobo na Armadilha" uniqueID="7" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event4">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="12" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="0,VIDA,6" tag="TAG-DL_NOITE_LOBO" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="10" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event4">
+      <outputs ownerID="2" targetID="3" name="Abrir a armadilha. Derictor perde 6 de Vida." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />Uma armadilha de ferro prendeu um lobo lunar. Ele rosna quando alguém se aproxima. Derictor pede que os outros guardem distância. Para tirar o lobo dali antes que cheguem os caçadores, terá de segurar a mola com a mão.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event4">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="0,VIDA,6,SUBRACE-DL_LOBO_NOTURNO" tag="TAG-DL_NOITE_LOBO" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />O ferro corta a mão de Derictor. Livre, o lobo fareja o sangue e se deita junto ao grupo. Quando vocês levantam acampamento, ele segue ao lado.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="A Última Vela" uniqueID="8" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event6">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="14" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="0,ESPIRITO,4" tag="TAG-DL_NOITE_ESPECTRO" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="9" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event6">
+      <outputs ownerID="2" targetID="3" name="Ceder uma centelha. Derictor perde 4 de Espírito." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />Um espírito vigia a última vela de um santuário. Pede a Derictor uma centelha para que a chama aguente até o amanhecer. Se ele cumprir o pedido, o espírito se oferece para vigiar o grupo.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event6">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="0,ESPIRITO,4,ITEM_CARGO-ADV_ONE_PET_GHOST" tag="TAG-DL_NOITE_ESPECTRO" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />A vela volta a arder. O espírito deixa o santuário com vocês e pode ser equipado como companheiro.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="A Dívida do Diabrete" uniqueID="9" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event5">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="20" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="0,ESPIRITO,6" tag="TAG-DL_NOITE_IMP" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="6" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event5">
+      <outputs ownerID="2" targetID="3" name="Selar a troca. Derictor perde 6 de Espírito." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />Um diabrete risca símbolos na porta da oficina. Quer uma centelha da magia de Derictor para saldar uma dívida com quem o invocou. Em troca, promete avisar o grupo quando outra coisa rondar o acampamento.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event5">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="0,ESPIRITO,6,ITEM_CARGO-STRONG_ONE_PET_IMP" tag="TAG-DL_NOITE_IMP" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />O diabrete apaga o último símbolo e se junta ao grupo como companheiro equipável.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="Presas sob o Caixote" uniqueID="10" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event4">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="17" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="0,VIDA,4" tag="TAG-DL_NOITE_ARANHA" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="9" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event4">
+      <outputs ownerID="2" targetID="3" name="Erguer o caixote. Derictor perde 4 de Vida." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />Uma aranha cuspideira está presa sob um caixote. Derictor pode alcançar a trava, mas a aranha está assustada e vira as presas para a mão dele.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event4">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="0,VIDA,4,ITEM_CARGO-ADV_ONE_PET_SPIDER_SPITTING" tag="TAG-DL_NOITE_ARANHA" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />A mordida deixa a mão dormente. A aranha sai do esconderijo e acompanha a expedição como pet equipável.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="A Asa Ferida" uniqueID="11" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event3">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="24" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="0,VIDA,8" tag="TAG-DL_NOITE_ESTRIGE" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="5" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event3">
+      <outputs ownerID="2" targetID="3" name="Resgatar o morcego estrige. Derictor perde 8 de Vida." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />Um morcego estrige caiu junto a uma fogueira apagada. Derictor reconhece a fome de magia, mas o animal ainda luta com quem tenta pegá-lo. Ele se oferece para imobilizá-lo enquanto o grupo tira a farpa da asa.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event3">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="0,VIDA,8,SUBRACE-BAT_STRIGA" tag="TAG-DL_NOITE_ESTRIGE" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />Derictor solta o morcego assim que a farpa sai. O estrige dá uma volta sobre a fogueira e retorna por vontade própria. Ele entra no grupo como personagem.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="O Gato do Celeiro" uniqueID="12" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event3">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="11" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="0,VIDA,0" tag="TAG-DL_NOITE_GATO" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="10" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event3">
+      <outputs ownerID="2" targetID="3" name="Dar espaço ao gato na carroça." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />Um gato preto vem seguindo o grupo desde que Derictor consertou a porta de um celeiro. Agora espera junto à carroça quando vocês se preparam para sair.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event3">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="0,VIDA,0,ITEM_CARGO-STRONG_ONE_PET_BLACK_CAT" tag="TAG-DL_NOITE_GATO" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />O gato escolhe um canto entre as mantas. Pode ser equipado como companheiro.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="A Vigília do Exilado" uniqueID="13" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event4">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="22" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="0,VIDA,0" tag="TAG-DL_NOITE_LOBISOMEM" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="5" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event4">
+      <outputs ownerID="2" targetID="3" name="Aceitar o lobisomem no grupo." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />Um lobisomem aparece fora do alcance da fogueira. Derictor o ouve sem sacar a arma. A fera quer deixar a matilha que expulsou os seus e pede para viajar com quem lhe deu tempo de falar.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event4">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="0,VIDA,0,SUBRACE-NIGHT_WEREWOLF_WEAK" tag="TAG-DL_NOITE_LOBISOMEM" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />O lobisomem se junta à expedição e se oferece para fazer a primeira vigília.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="O Sino sob a Capela" uniqueID="14" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event6">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="25" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="0,VIDA,0" tag="TAG-DL_NOITE_SINO" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="7" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event6">
+      <outputs ownerID="2" targetID="3" name="Marcar a capela e combinar o retorno." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />Um sino soa sob uma capela em ruínas. Uma vigia da noite guarda a entrada e pede ajuda para retirar as pessoas que ainda se escondem lá dentro. Derictor promete voltar quando houver uma passagem segura.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event6">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="0,VIDA,0," tag="TAG-DL_NOITE_SINO" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />A vigia mostra uma entrada lateral. O grupo agora sabe onde procurar os sobreviventes em outra noite.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="A Passagem da Capela" uniqueID="15" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event5">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="26" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="1,VIDA,9" tag="TAG-DL_NOITE_SINO" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="10" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event5">
+      <outputs ownerID="2" targetID="3" name="Sustentar a viga. Derictor perde 9 de Vida." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />Vocês voltam à capela. O corredor cedeu, e a vigia está do outro lado com os sobreviventes. Derictor pode sustentar a viga tempo suficiente para abrir passagem.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event5">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="1,VIDA,9," tag="TAG-DL_NOITE_SINO" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />Os sobreviventes saem. A vigia fica para manter a passagem aberta e combina um último encontro com Derictor.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
+  </Adventure>
+  <Adventure name="O Juramento da Vigia" uniqueID="16" allowOnce="false" typeGeneric="false" typePerGroupGeneric="true" typeInterrupt="false" typeExpedition="false" typeVillage="false" difficulty="0" nodeIdMax="4" joinIsForced="false" joinType="OnlyOwn" joinRange="SinglePosition">
+    <nodes xsi:type="NodeStarting" ID="1" positionX="0" positionY="0" width="350" height="660" image="DL_Event6">
+      <logic>
+        <FilterBlock>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_PlayersHaveSharedTag" parameter="1" tag="TAG-NIGHT" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_TurnAboveOrEqualValue" parameter="30" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_DL_NightOffer" parameter="2,ESPIRITO,10" tag="TAG-DL_NOITE_SINO" />
+          </LogicResultAction>
+          <LogicResultAction>
+            <scriptCallWithTag scriptName="FRA_Chance" parameter="2" />
+          </LogicResultAction>
+        </FilterBlock>
+      </logic>
+      <outputs ownerID="1" targetID="2" fromX="335" fromY="-570" />
+    </nodes>
+    <nodes xsi:type="NodeAdventure" ID="2" positionX="500" positionY="0" width="350" height="660" image="DL_Event6">
+      <outputs ownerID="2" targetID="3" name="Assumir parte da vigília. Derictor perde 10 de Espírito." fromX="830" fromY="-570" />
+      <outputs ownerID="2" targetID="4" name="Seguir viagem por enquanto." fromX="830" fromY="-640" />A vigia revela sua forma de estrige e explica que jurou guardar o sino. Aceita viajar se Derictor deixar parte de seu Espírito na capela para manter a proteção dos que ficaram.</nodes>
+    <nodes xsi:type="NodeAdventure" ID="3" positionX="1000" positionY="0" width="350" height="660" image="DL_Event6">
+      <logic>
+        <ModifierBlock>
+          <LogicModifiers>
+            <scriptCallWithTag scriptName="FMO_DL_NightReward" parameter="2,ESPIRITO,10,SUBRACE-NIGHT_STRIGA_MISTRESS" tag="TAG-DL_NOITE_SINO" />
+          </LogicModifiers>
+        </ModifierBlock>
+      </logic>
+      <outputs ownerID="3" targetID="4" name="Continuar." fromX="1335" fromY="-570" />O sino toca uma última vez quando vocês saem. A vigia estrige entra para a expedição.</nodes>
+    <nodes xsi:type="NodeAdventureEnd" ID="4" positionX="1500" positionY="0" width="350" height="660" linkedEventUniqueID="0" />
   </Adventure>
 </MODULE>

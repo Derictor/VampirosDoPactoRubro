@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <SUBSKILLS_CHALLENGES>
   <SUBSKILL-DL_CALL Delay="0.0" Animation="Spell2" Sound="SubskillSummonWildBeast">
     <DescriptionInfo Name="DES_DL_CALL" Description="DES_DL_CALL_DES" IconName="SubskillSummonWildBeast" />

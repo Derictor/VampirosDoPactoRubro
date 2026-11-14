@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <SKILLS_PACKS>
   <SKILL_PACK-DL_VAMPIRE>
     <RarityRange MinimumCount="0" MaximumCount="100" />
@@ -26,4 +25,18 @@
       <SkillGroupSingleFilter Name="Fallback" Requirement="NecessaryType" />
     </SkillGroupFilters>
   </SKILL_PACK-DL_NOVICE>
+  <SKILL_PACK-DL_PET_BAT>
+    <RarityRange MinimumCount="0" MaximumCount="0" />
+    <GuarantedSkill Value="SKILL-DL_PET_BAT" />
+    <SkillGroupFilters>
+      <SkillGroupSingleFilter Name="DL_PetBat" Requirement="NecessaryType" />
+    </SkillGroupFilters>
+  </SKILL_PACK-DL_PET_BAT>
+  <SKILL_PACK-DL_PACT_WEAKNESS>
+    <RarityRange MinimumCount="0" MaximumCount="0" />
+    <GuarantedSkill Value="SKILL-DL_PACT_WEAKNESS" />
+    <SkillGroupFilters>
+      <SkillGroupSingleFilter Name="DL_PactWeakness" Requirement="NecessaryType" />
+    </SkillGroupFilters>
+  </SKILL_PACK-DL_PACT_WEAKNESS>
 </SKILLS_PACKS>

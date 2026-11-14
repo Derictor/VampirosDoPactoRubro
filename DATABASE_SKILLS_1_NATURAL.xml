@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <SKILLS_1_NATURAL name="1_Natural">
   <SKILL-DL_SIPHON Rarity="0">
     <DescriptionInfo Name="DES_DL_SIPHON" Description="DES_DL_SIPHON_DES" IconName="SubskillWillDrain" />
